@@ -1,0 +1,142 @@
+
+/* Arrière-plan avec fleur floue */
+.background-blur {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(6px) brightness(0.7);
+    z-index: -1;
+  }
+  
+  /* Styles globaux */
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #1e1e1e;
+    scroll-behavior: smooth;
+  }
+  
+  /* Animation d'apparition */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Header */
+  header {
+    text-align: center;
+    padding: 40px 20px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  header img {
+    width: 200px;
+    border-radius: 50%;
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 1s ease-in-out;
+  }
+  header img.loaded {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Navigation */
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    margin: 0;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: #444;
+    font-weight: bold;
+  }
+  nav ul li a:hover {
+    color: #0077cc;
+  }
+  
+  /* Sections */
+  section {
+    background: rgba(255, 255, 255, 0.95);
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  
+  /* Projets */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  ul li {
+    margin: 10px 0;
+    padding: 10px;
+    border-left: 4px solid #0077cc;
+    background: #f9f9f9;
+  }
+  .details {
+    display: none;
+    margin-top: 5px;
+  }
+  .details.open {
+    display: block;
+  }
+  .details-btn {
+    margin-top: 5px;
+    background: transparent;
+    border: 1px solid #0077cc;
+    color: #0077cc;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  .details-btn:hover {
+    background: #0077cc;
+    color: white;
+  }
+  
+  /* CV */
+  #cv a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0077cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  #cv a:hover {
+    background: #005999;
+  }
+  
+  /* Contact */
+  #contact a {
+    color: #0077cc;
+    text-decoration: none;
+  }
+  #contact a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px;
+  }
+  
