@@ -10,6 +10,95 @@
   }
   
   /* Styles globaux */
+  <style>
+  /* Barre verticale fixe à gauche */
+  .social-menu {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    background-color: #222;
+    padding: 15px 10px;
+    border-radius: 0 8px 8px 0;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+  }
+
+  /* Masquer la barre quand inactive */
+  .social-menu.hidden {
+    transform: translate(-100%, -50%);
+  }
+
+  /* Style des liens dans la barre */
+  .social-menu a {
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 140px;
+  }
+
+  .social-menu a i {
+    font-size: 24px;
+  }
+
+  .social-menu a:hover {
+    color: #6c63ff;
+  }
+
+  /* Bouton toggle */
+  .social-toggle {
+    position: fixed;
+    top: 50%;
+    left: 150px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #222;
+    font-size: 28px;
+    z-index: 1100;
+    background: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+  }
+</style>
+
+<!-- Bouton toggle -->
+<div class="social-toggle" onclick="toggleMenu()">
+  <i class="fas fa-bars"></i>
+</div>
+
+<!-- Barre sociale verticale -->
+<div class="social-menu" id="socialMenu">
+  <a href="/cv.pdf" target="_blank" title="Mon CV">
+    <i class="fas fa-file-alt"></i> CV
+  </a>
+  <a href="#contacts" title="Contacts">
+    <i class="fas fa-address-book"></i> Contacts
+  </a>
+  <a href="https://wa.me/237679194104" target="_blank" title="WhatsApp">
+    <i class="fab fa-whatsapp"></i> WhatsApp
+  </a>
+  <a href="https://github.com/Regine-KOMMEGNE" target="_blank" title="GitHub">
+    <i class="fab fa-github"></i> GitHub
+  </a>
+  <a href="mailto:reginekommegne@gmail.com" title="Email">
+    <i class="fas fa-envelope"></i> Email
+  </a>
+</div>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('socialMenu');
+    menu.classList.toggle('hidden');
+  }
+</script>
+
   body {
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
