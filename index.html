@@ -8,6 +8,22 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
+<div class="social-toggle" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+  
+  <div class="social-menu" id="socialMenu">
+    <a href="https://wa.me/237679194104" target="_blank" title="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://github.com/Regine-KOMMEGNE" target="_blank" title="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="mailto:reginekommegne@gmail.com" title="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+  
 <body>
 
   <div class="background-blur"></div>
@@ -75,6 +91,30 @@
 
     <a href="cv.pdf" download>Télécharger mon CV complet</a>
   </section>
+  <section id="galerie">
+    <h2><i class="fas fa-images"></i> Galerie</h2>
+    <div class="grid-gallery">
+        <div class="card">
+            <img src="image1.jpg" alt="Projet 1" class="zoomable">
+            <p>Projet 1 : Description</p>
+        </div>
+        <div class="card">
+            <img src="image2.jpg" alt="Projet 2" class="zoomable">
+            <p>Projet 2 : Description</p>
+        </div>
+        <div class="card">
+            <img src="image3.jpg" alt="Projet 3" class="zoomable">
+            <p>Projet 3 : Description</p>
+        </div>
+    </div>
+</section>
+
+<!-- Fenêtre modale -->
+<div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+</div>
+
 
   <section id="contact" class="fade-in">
     <h2><i class="fas fa-envelope"></i> Contact</h2>

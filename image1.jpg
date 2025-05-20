@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="referrer" content="origin-when-cross-origin">
+    <script>//<![CDATA[
+      var s = false;
+      function l() {
+        setTimeout(f, 10000);
+        if (document.referrer) {
+          try {
+            var pm = /(^|&|\?)px=([^&]*)(&|$)/i;
+            var px = window.location.href.match(pm);
+            var rs = document.referrer;
+            if (px != null) {
+              if (rs.match(pm))
+                rs = rs.replace(pm, "$1px=" + px[2] + "$3");
+              else if (rs.indexOf("?") != -1)
+                rs = rs + "&px=" + px[2];
+              else
+                rs = rs + "?px=" + px[2];
+            }
+            history.replaceState({}, "Bing", rs);
+            window.addEventListener("pageshow", function(e) { if (e.persisted || (typeof window.performance != "undefined" && window.performance.navigation.type === 2)) window.location.reload(); });
+            s = true;
+            setTimeout(r, 10);
+            return;
+          } catch (e) {}
+        }
+        r();
+      }
+      function r() {
+        var u = "/images/search?q=image+de+projet+informatique&id=5674F11057CC0AD5FA28C95DB70C9F5AE4844EF2&FORM=IACFIR";
+        if (s)
+          window.location.href = u;
+        else
+          window.location.replace(u);
+      }
+      function f() {
+        document.getElementById("fb").style.display = "block";
+      }
+      //]]>
+    </script>
+  </head>
+  <body onload="l()">
+    <div id="fb" style="display: none">
+      Please <a href="https://www.bing.com/ck/a?!&&p=357c4d9ca7d2d4a26c475073a8c076f1940bf1136c6e0587d83601081680b1a1JmltdHM9MTc0NzYxMjgwMA&ptn=3&ver=2&hsh=4&fclid=01a9a6ed-236c-64f8-3f95-b37222f2650e&u=a1L2ltYWdlcy9zZWFyY2g_cT1pbWFnZStkZStwcm9qZXQraW5mb3JtYXRpcXVlJmlkPTU2NzRGMTEwNTdDQzBBRDVGQTI4Qzk1REI3MEM5RjVBRTQ4NDRFRjImRk9STT1JQUNGSVI&ntb=F">click here</a> if the page does not redirect automatically ...
+    </div>
+  </body>
+</html>

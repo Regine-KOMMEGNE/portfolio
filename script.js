@@ -28,3 +28,28 @@ document.querySelectorAll(".details-btn").forEach(button => {
     button.textContent = details.classList.contains("open") ? "Fermer détails" : "Voir détails";
   });
 });
+// Modal zoom pour les images
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modal-img");
+const closeBtn = document.getElementsByClassName("close")[0];
+
+document.querySelectorAll(".zoomable").forEach(img => {
+    img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+    });
+});
+
+closeBtn.onclick = function () {
+    modal.style.display = "none";
+};
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+};
+function toggleMenu() {
+    const menu = document.getElementById("socialMenu");
+    menu.classList.toggle("open");
+}
