@@ -228,6 +228,26 @@
     color: white;
     padding: 15px;
   }
+  .portfolio_grid {
+    margin-top: 2rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.portfolio_grid{
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 10px  rgba(0, 0, 0, 0.2);
+}
+
+.portfolio_card img {
+    transition: 5s;
+}
+
+.portfolio_card:hover img{
+    transform: scale(1.1);
+}
+
   .grid-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
